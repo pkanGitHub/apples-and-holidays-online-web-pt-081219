@@ -25,7 +25,7 @@ def add_supply_to_winter_holidays(holiday_hash, supply)
   # holiday_hash is identical to the one above
   # add the second argument, which is a supply, to BOTH the
   # Christmas AND the New Year's arrays
-
+  
 end
 
 
@@ -54,7 +54,13 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-
+  holiday_hash.each do | season, value |
+    return_string = "#{season.capitalize}:"
+  value.each do |holiday, supply_array|
+    return_string += " #{holiday.to_s.capitalize}:" + " #{supply_array.join.split(" ")}"
+    p return_string
+    end
+  end
 end
 
 def all_holidays_with_bbq(holiday_hash)
